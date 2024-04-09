@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/logo.png">
+    <title>The Pizza Maker</title>
+</head>
+
+<body>
+    <section id="introduction"></section>
+    <h1 class="intro">WELCOME!</h1>
+    <button id="pickupBtn" class="btn">Pickup</button>
+    <button id="deliveryBtn" class="btn">Delivery</button>
+
+    <!-- Pickup Order Form -->
+    <div id="pickupForm" class="order-form">
+    <img src="images/pizzayolo.png" alt="mini" class="pizza-img" id="pizzaImg">
+        <h2>PICKUP ORDER FORM:</h2>
+        <form>
+            <!-- Pizza details -->
+            <div class="form-section">
+                <label for="Pizzasize">Pizza Size:</label>
+                <select id="Pizzasize" name="Pizzasize">
+                    <option value="">Choose size...</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="extraLarge">Extra Large</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="Crust">Crust Type:</label>
+                <select id="Crust" name="Crust">
+                    <option value="">Choose crust...</option>
+                    <option value="thinCrust">Thin Crust</option>
+                    <option value="handTossedCrust">Hand-Tossed Crust</option>
+                    <option value="panCrust">Pan Crust</option>
+                    <option value="stuffedCrust">Stuffed Crust</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="Sauce">Sauce Options:</label>
+                <select id="Sauce" name="Sauce">
+                    <option value="">Choose sauce...</option>
+                    <option value="marinara">Marinara</option>
+                    <option value="alfredo">Alfredo</option>
+                    <option value="barbecue">Barbecue</option>
+                    <option value="pesto">Pesto</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="Cheese">Cheese Options:</label>
+                <select id="Cheese" name="Cheese">
+                    <option value="">Choose cheese...</option>
+                    <option value="mozzarella">Mozzarella</option>
+                    <option value="cheddar">Cheddar</option>
+                    <option value="parmesan">Parmesan</option>
+                    <option value="feta">Feta</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="Toppings">Toppings:</label>
+                <div class="topping-checkboxes">
+                    <input type="checkbox" id="Pepperoni" name="Pepperoni">
+                    <label for="Pepperoni">Pepperoni</label>
+                    <input type="checkbox" id="Mushrooms" name="Mushrooms">
+                    <label for="Mushrooms">Mushrooms</label>
+                    <input type="checkbox" id="Onions" name="Onions">
+                    <label for="Onions">Onions</label>
+                    <input type="checkbox" id="BellPeppers" name="BellPeppers">
+                    <label for="BellPeppers">Bell Peppers</label>
+                    <input type="checkbox" id="Sausage" name="Sausage">
+                    <label for="Sausage">Sausage</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h4>Additional Ingredients:</h4>
+                <div class="additional-ingredients">
+                    <input type="checkbox" id="Garlic" name="Garlic">
+                    <label for="Garlic">Garlic</label>
+                    <input type="checkbox" id="Basil" name="Basil">
+                    <label for="Basil">Basil</label>
+                    <input type="checkbox" id="Spinach" name="Spinach">
+                    <label for="Spinach">Spinach</label>
+                    <input type="checkbox" id="Artichokes" name="Artichokes">
+                    <label for="Artichokes">Artichokes</label>
+                    <input type="checkbox" id="Tomatoes" name="Tomatoes">
+                    <label for="Tomatoes">Tomatoes</label>
+                    <input type="checkbox" id="Chicken" name="Chicken">
+                    <label for="Chicken">Chicken</label>
+                    <input type="checkbox" id="Steak" name="Steak">
+                    <label for="Steak">Steak</label>
+                    <input type="checkbox" id="Anchovies" name="Anchovies">
+                    <label for="Anchovies">Anchovies</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label for="Quantity">Number of pizzas to order:</label>
+                <input type="number" id="Quantity" name="Quantity" min="1" max="50" value="1">
+            </div>
+
+            <div class="form-section">
+                <h2>Special Instructions:</h2>
+                <textarea id="specialInstructions" placeholder="Any additional instructions or preferences"></textarea>
+            </div>
+
+            <!-- Contact information -->
+            <div class="form-section">
+                <h4>Contact Information:</h4>
+                <label for="fname">Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="Benedict Itua-Obaitua">
+                <label for="Phone">Phone Number:</label>
+                <input type="tel" id="Phone" name="Phone" placeholder="1220702">
+                <label for="Address">Email Address:</label>
+                <input type="email" id="Address" name="Address" placeholder="JC@gmail.com">
+            </div>
+
+            <!-- Payment details -->
+            <div class="form-section">
+                <h4>Payment:</h4>
+                <label for="ccnumber">Credit Card Number:</label>
+                <input type="text" id="ccnumber" name="ccnumber" placeholder="Enter credit card number">
+                <label for="Expiry">Expiry Date:</label>
+                <input type="text" id="Expiry" name="Expiry" placeholder="MM/YY">
+                <label for="CVC">CVV/CVC Code:</label>
+                <input type="text" id="CVC" name="CVC" placeholder="Enter CVC">
+                <label for="Code">Coupon Code:</label>
+                <input type="text" id="Code" name="Code" placeholder="Enter coupon code">
+            </div>
+
+            <!-- Subscription option -->
+            <div class="form-section">
+                <h4>Subscription Options:</h4>
+                <input type="checkbox" id="Sub" name="Sub">
+                <label for="Sub">Subscribe for regular pizza deliveries with special discounts or offers</label>
+            </div>
+
+            <!-- Submit button -->
+            <div class="form-section">
+                <button id="submitOrderBtn" class="btn">Submit Order</button>
+            </div>
+
+                   </form>
+    </div>
+
+    <!-- Delivery Order Form -->
+    <div id="deliveryForm" class="order-form" style="display: none;">
+    <img src="images/pizzayolo.png" alt="mini" class="pizza-img" id="pizzaImgDelivery">
+        <h2>DELIVERY ORDER FORM:</h2>
+        <form>
+            <!-- Pizza details -->
+            <div class="form-section">
+                <label for="PizzasizeDelivery">Pizza Size:</label>
+                <select id="PizzasizeDelivery" name="PizzasizeDelivery">
+                    <option value="">Choose size...</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="extraLarge">Extra Large</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="CrustDelivery">Crust Type:</label>
+                <select id="CrustDelivery" name="CrustDelivery">
+                    <option value="">Choose crust...</option>
+                    <option value="thinCrust">Thin Crust</option>
+                    <option value="handTossedCrust">Hand-Tossed Crust</option>
+                    <option value="panCrust">Pan Crust</option>
+                    <option value="stuffedCrust">Stuffed Crust</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="SauceDelivery">Sauce Options:</label>
+                <select id="SauceDelivery" name="SauceDelivery">
+                    <option value="">Choose sauce...</option>
+                    <option value="marinara">Marinara</option>
+                    <option value="alfredo">Alfredo</option>
+                    <option value="barbecue">Barbecue</option>
+                    <option value="pesto">Pesto</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="CheeseDelivery">Cheese Options:</label>
+                <select id="CheeseDelivery" name="CheeseDelivery">
+                    <option value="">Choose cheese...</option>
+                    <option value="mozzarella">Mozzarella</option>
+                    <option value="cheddar">Cheddar</option>
+                    <option value="parmesan">Parmesan</option>
+                    <option value="feta">Feta</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="ToppingsDelivery">Toppings:</label>
+                <div class="topping-checkboxes">
+                    <input type="checkbox" id="PepperoniDelivery" name="PepperoniDelivery">
+                    <label for="PepperoniDelivery">Pepperoni</label>
+                    <input type="checkbox" id="MushroomsDelivery" name="MushroomsDelivery">
+                    <label for="MushroomsDelivery">Mushrooms</label>
+                    <input type="checkbox" id="OnionsDelivery" name="OnionsDelivery">
+                    <label for="OnionsDelivery">Onions</label>
+                    <input type="checkbox" id="BellPeppersDelivery" name="BellPeppersDelivery">
+                    <label for="BellPeppersDelivery">Bell Peppers</label>
+                    <input type="checkbox" id="SausageDelivery" name="SausageDelivery">
+                    <label for="SausageDelivery">Sausage</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h4>Additional Ingredients:</h4>
+                <div class="additional-ingredients">
+                    <input type="checkbox" id="GarlicDelivery" name="GarlicDelivery">
+                    <label for="GarlicDelivery">Garlic</label>
+                    <input type="checkbox" id="BasilDelivery" name="BasilDelivery">
+                    <label for="BasilDelivery">Basil</label>
+                    <input type="checkbox" id="SpinachDelivery" name="SpinachDelivery">
+                    <label for="SpinachDelivery">Spinach</label>
+                    <input type="checkbox" id="ArtichokesDelivery" name="ArtichokesDelivery">
+                    <label for="ArtichokesDelivery">Artichokes</label>
+                    <input type="checkbox" id="TomatoesDelivery" name="TomatoesDelivery">
+                    <label for="TomatoesDelivery">Tomatoes</label>
+                    <input type="checkbox" id="ChickenDelivery" name="ChickenDelivery">
+                    <label for="ChickenDelivery">Chicken</label>
+                    <input type="checkbox" id="SteakDelivery" name="SteakDelivery">
+                    <label for="SteakDelivery">Steak</label>
+                    <input type="checkbox" id="AnchoviesDelivery" name="AnchoviesDelivery">
+                    <label for="AnchoviesDelivery">Anchovies</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label for="QuantityDelivery">Number of pizzas to order:</label>
+                <input type="number" id="QuantityDelivery" name="QuantityDelivery" min="1" max="50" value="1">
+            </div>
+
+            <div class="form-section">
+                <h2>Special Instructions:</h2>
+                <textarea id="specialInstructionsDelivery" placeholder="Any additional instructions or preferences"></textarea>
+            </div>
+
+            <!-- Delivery details -->
+            <div class="form-section">
+                <h4>Delivery Options:</h4>
+                <label for="DeliveryLocation">Delivery Location:</label>
+                <input type="text" id="DeliveryLocation" name="DeliveryLocation" placeholder="Enter delivery address">
+                <label for="DeliveryTime">Delivery Time:</label>
+                <input type="time" id="DeliveryTime" name="DeliveryTime" value="12:00">
+            </div>
+
+            <!-- Contact information -->
+            <div class="form-section">
+                <h4>Contact Information:</h4>
+                <label for="fnameDelivery">Name:</label>
+                <input type="text" id="fnameDelivery" name="fnameDelivery" placeholder="Benedict Itua-Obaitua">
+                <label for="PhoneDelivery">Phone Number:</label>
+                <input type="tel" id="PhoneDelivery" name="PhoneDelivery" placeholder="1220702">
+                <label for="AddressDelivery">Email Address:</label>
+                <input type="email" id="AddressDelivery" name="AddressDelivery" placeholder="JC@gmail.com">
+            </div>
+
+            <!-- Payment details -->
+            <div class="form-section">
+                <h4>Payment:</h4>
+                <label for="ccnumberDelivery">Credit Card Number:</label>
+                <input type="text" id="ccnumberDelivery" name="ccnumberDelivery" placeholder="Enter credit card number">
+                <label for="ExpiryDelivery">Expiry Date:</label>
+                <input type="text" id="ExpiryDelivery" name="ExpiryDelivery" placeholder="MM/YY">
+                <label for="CVCDelivery">CVV/CVC Code:</label>
+                <input type="text" id="CVCDelivery" name="CVCDelivery" placeholder="Enter CVC">
+                <label for="CodeDelivery">Coupon Code:</label>
+                <input type="text" id="CodeDelivery" name="CodeDelivery" placeholder="Enter coupon code">
+            </div>
+
+            <!-- Subscription option -->
+            <div class="form-section">
+                <h4>Subscription Options:</h4>
+                <input type="checkbox" id="SubDelivery" name="SubDelivery">
+                <label for="SubDelivery">Subscribe for regular pizza deliveries with special discounts or offers</label>
+            </div>
+
+            <!-- Submit button -->
+            <div class="form-section">
+                <button id="submitOrderBtnDelivery" class="btn">Submit Order</button>
+            </div>
+
+           
+        </form>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+<footer>
+    Name: Benedict Itua-Obaitua
+    Student ID: 1220702
+</footer>
+
+</html>
